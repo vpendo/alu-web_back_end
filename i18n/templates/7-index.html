@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Login Mock</title>
+</head>
+<body>
+    {% if g.user %}
+        <p>
+            {% if g.locale == 'fr' %}
+                Vous êtes connecté en tant que {{ g.user.name }}.
+            {% else %}
+                You are logged in as {{ g.user.name }}.
+            {% endif %}
+        </p>
+        <p>
+            {% if g.locale == 'fr' %}
+                Votre fuseau horaire est {{ g.timezone }}.
+            {% else %}
+                Your timezone is {{ g.timezone }}.
+            {% endif %}
+        </p>
+    {% else %}
+        <p>
+            {% if g.locale == 'fr' %}
+                Vous n'êtes pas connecté.
+            {% else %}
+                You are not logged in.
+            {% endif %}
+        </p>
+    {% endif %}
+</body>
+</html>
