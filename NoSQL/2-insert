@@ -1,2 +1,4 @@
 // inserts a document in the collection
-await db.collection('school').insertOne({ name: 'Holberton school' });
+// inserts a document in the collection
+printjson(db.school.insert({ name: "Holberton school" }));
+
